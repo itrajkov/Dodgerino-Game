@@ -86,7 +86,7 @@ if background.is_start_game():
 		#Collision detection
 		if collision(player.getX(), player.getY(), meteor1.getX(), meteor1.getY()) or collision(player.getX(), player.getY(), meteor2.getX(), meteor2.getY()):
 			player.crash()
-			background.end_screen()
+			background.end_screen(player.get_score())
 			
 			# Add info to database
 			conn = sqlite3.connect("highscores.db")
