@@ -1,0 +1,21 @@
+body {
+    background-image: url("../images/background.png");
+}
+
+#cover {
+    margin-left:26%;
+    padding-top:5%;
+}
+
+#about {
+    position: absolute;
+    left: 15%;
+    top: 55%;
+}
+
+#highscores {
+    position: absolute;
+    left: 68%;
+    top: 55%; 
+}
+

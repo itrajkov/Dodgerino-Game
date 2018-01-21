@@ -1,0 +1,17 @@
+body {
+    background-image: url("../images/background.png");
+}
+
+#cover {
+    margin-left:26%;
+    padding-top:15%;
+}
+
+table, th, td {
+    border: 3px solid yellow;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
