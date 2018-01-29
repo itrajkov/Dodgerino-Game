@@ -4,7 +4,7 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from app import app
 
-FILE_PATH = "E:\Programming\Python\Dodgerino-Game-Refined\highscores.db"
+FILE_PATH = "/home/ivche/Projects/Dodgerino-Game/highscores.db"
 print(FILE_PATH)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+FILE_PATH
