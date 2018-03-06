@@ -72,14 +72,15 @@ if background.is_start_game():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				quit()
-			elif event.type == pygame.KEYDOWN:
+			elif event.type == pygame.MOUSEBUTTONDOWN:
 					#PLAYER !!
-					if event.key == pygame.K_q:  # Goes Left
+					if event.button == 1:  # Goes Left
 						player.setX(width / 2.30 - 250)
-					elif event.key == pygame.K_w:  # Goes Middle
-						player.setX(width / 2.30)
-					elif event.key == pygame.K_e:  # Goes Right
+					elif event.button == 3:  # Goes Right
 						player.setX (width / 2.30 + 250)
+
+			else:
+				player.setX(width / 2.30)
 
 		# --- Game logic should go here
 
@@ -87,7 +88,7 @@ if background.is_start_game():
 		if collision(player.getX(), player.getY(), meteor1.getX(), meteor1.getY()) or collision(player.getX(), player.getY(), meteor2.getX(), meteor2.getY()):
 			player.crash()
 			background.end_screen(player.get_score())
-			
+
 			# Add info to database
 			conn = sqlite3.connect("highscores.db")
 			c = conn.cursor()
@@ -96,10 +97,10 @@ if background.is_start_game():
 			# Save (commit) the changes
 			conn.commit()
 			conn.close()
-			
+
 			# Check if the player wants to play again
 			done = not background.is_start_game()
-			
+
 			# Reset the game
 			player.set_score(0)
 			Meteor.speed = 10
@@ -111,9 +112,9 @@ if background.is_start_game():
 			pair = create_random_pair()
 			meteor1 = Meteor(pair[0], screen)
 			meteor2 = Meteor(pair[1], screen)
-			Meteor.speed += 1
 			player.add_score_point()
-
+			if player.get_score() % 5 == 0:
+				Meteor.speed += 2
 
 		# --- Screen-clearing code
 		background.show_background_image()
