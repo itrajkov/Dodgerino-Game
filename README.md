@@ -31,8 +31,8 @@ in the command line.
 
 # The web server
 
-  I also wrote a flask webapp which has "About" section and a "Highscore" section.
+  I also wrote a flask webapp which has an "About" section and a "Highscore" section.
 
   The "About" section has all the credits and the controls of the game.
   
-  The "Highscores" sections grabs the scores from the database, and lists them in a table.
+  The "Highscores" section grabs the scores from the database, and lists them in a table.
