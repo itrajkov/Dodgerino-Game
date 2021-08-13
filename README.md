@@ -4,9 +4,8 @@
 
 ## Controls
    ```
-   Q -> Left	
-   W -> Middle
-   R -> Right
+   Left click -> Left	
+   Right click -> Right
    ```
    
 ## Dependencies
